@@ -22,7 +22,11 @@ export class WeatherService implements IWeatherService {
 
             const weatherData: Weather = {
                 temperatureCelsius: dataFromWeatherAPI.main.temp,
-                cityName: dataFromWeatherAPI.sys.country
+                cityName: dataFromWeatherAPI.sys.country,
+                sunrise: dataFromWeatherAPI.sys.sunrise,
+                sunset: dataFromWeatherAPI.sys.sunset,
+                weatherConditions: dataFromWeatherAPI.weather.main,
+                icon: dataFromWeatherAPI.weather.icon
             };
             return weatherData;
         } catch (error) {
